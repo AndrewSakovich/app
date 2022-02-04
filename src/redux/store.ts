@@ -1,4 +1,6 @@
-import {createStore} from '@reduxjs/toolkit';
-import {todoReducer} from './reducers/todoReducer';
+import {createStore} from 'redux';
+import {todoReducer, TodoReducerState} from './reducers/todoReducer';
+
+export type ReduxStoreType = TodoReducerState;
 
 export const store = createStore(todoReducer);

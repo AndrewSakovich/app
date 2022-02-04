@@ -6,4 +6,5 @@ export const Color = {
   black: '#000000',
   cararra: '#ECEBE9',
   lemonGrass: '#8E8F8A',
+  silver: '#C7C7C7',
 };

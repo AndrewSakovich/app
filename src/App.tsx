@@ -1,10 +1,10 @@
 import React from 'react';
-import {Provider, useSelector} from 'react-redux';
+import {Provider} from 'react-redux';
 import {store} from './redux/store';
 import {ScreenTodo} from './components/ScreenTodo';
 import 'react-native-get-random-values';
 
-const App = () => {
+const App: React.FC = () => {
   return (
     <Provider store={store}>
       <ScreenTodo />

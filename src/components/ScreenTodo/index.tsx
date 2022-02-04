@@ -5,7 +5,7 @@ import {ItemAdd} from '../ItemAdd';
 import {ItemList} from '../ItemList';
 import {style} from './style';
 
-export const ScreenTodo = () => {
+export const ScreenTodo: React.FC = () => {
   return (
     <View style={style.container}>
       <AppHeader />

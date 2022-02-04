@@ -1,7 +1,12 @@
 import React from 'react';
-import {StyleSheet} from 'react-native';
+import {StyleSheet, TextStyle, ViewStyle} from 'react-native';
 
-export const style = StyleSheet.create({
+type StartWindowStyleType = {
+  container: ViewStyle;
+  text: TextStyle;
+};
+
+export const style = StyleSheet.create<StartWindowStyleType>({
   container: {
     marginTop: 100,
     flex: 1,

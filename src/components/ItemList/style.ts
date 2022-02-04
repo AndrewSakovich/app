@@ -1,10 +1,14 @@
-import {StyleSheet} from 'react-native';
-import {StatusBar} from 'react-native';
+import {StyleSheet, ViewStyle} from 'react-native';
+import {Color} from '../../color';
 
-export const style = StyleSheet.create({
+type ItemListStyleType = {
+  container: ViewStyle;
+};
+
+export const style = StyleSheet.create<ItemListStyleType>({
   container: {
     borderTopWidth: 1,
-    borderTopColor: '#C7C7C7',
+    borderTopColor: Color.silver,
     paddingTop: 5,
     flex: 1,
   },

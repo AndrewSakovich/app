@@ -1,7 +1,12 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, TextStyle, ViewStyle} from 'react-native';
 import {Color} from '../../color';
 
-export const style = StyleSheet.create({
+type AppHeaderStyleType = {
+  header: ViewStyle;
+  text: TextStyle;
+};
+
+export const style = StyleSheet.create<AppHeaderStyleType>({
   header: {
     height: 45,
     backgroundColor: Color.sapphire,

@@ -1,7 +1,15 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, TextStyle, ViewStyle} from 'react-native';
 import {Color} from '../../color';
 
-export const style = StyleSheet.create({
+type ItemAddStylesType = {
+  container: ViewStyle;
+  button: ViewStyle;
+  input: ViewStyle;
+  text: TextStyle;
+  textDis: TextStyle;
+};
+
+export const style = StyleSheet.create<ItemAddStylesType>({
   container: {
     padding: 10,
     flexDirection: 'row',

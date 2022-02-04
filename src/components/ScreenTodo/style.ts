@@ -1,6 +1,10 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, ViewStyle} from 'react-native';
 
-export const style = StyleSheet.create({
+type ScreenTodoStyleType = {
+  container: ViewStyle;
+};
+
+export const style = StyleSheet.create<ScreenTodoStyleType>({
   container: {
     flex: 1,
   },
