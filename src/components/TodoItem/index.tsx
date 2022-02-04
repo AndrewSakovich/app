@@ -18,8 +18,8 @@ export const TodoItem: FC<TodoItemPropsType> = props => {
       },
       {
         text: 'OK',
-        onPress: (): void => {
-          dispatch(deleteItemAction(id));
+        onPress: () => {
+          dispatch(deleteItemAction({id}));
         },
       },
     ]);
@@ -28,11 +28,7 @@ export const TodoItem: FC<TodoItemPropsType> = props => {
   return (
     <View style={style.item}>
       <Text style={style.text}>{text}</Text>
-      <Text
-        style={style.delete}
-        onPress={(): void => {
-          onPressDelete();
-        }}>
+      <Text style={style.delete} onPress={onPressDelete}>
         {'DELETE'}
       </Text>
     </View>

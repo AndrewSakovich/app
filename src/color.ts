@@ -1,5 +1,3 @@
-import React from 'react';
-
 export const Color = {
   sapphire: '#3949AB',
   white: '#FFFFFF',

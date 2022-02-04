@@ -1,17 +1,17 @@
 import {TodoActionTypes} from './index';
 
-export const deleteItemAction = (id: string) => {
+export const deleteItemAction = (payload: ItemDeletePayload) => {
   return {
     type: TodoActionTypes.DELETE_ITEM,
-    payload: {
-      id,
-    },
+    payload,
   };
+};
+
+export type ItemDeletePayload = {
+  id: string;
 };
 
 export type ItemDeleteAction = {
   type: TodoActionTypes.DELETE_ITEM;
-  payload: {
-    id: string;
-  };
+  payload: ItemDeletePayload;
 };
