@@ -1,11 +1,15 @@
 import {TodoItemType} from '../../../models';
 import {TodoActionTypes} from './index';
 
-export const addItemAction = (payload: TodoItemType) => {
+export const itemAddAction = (payload: ItemAddPayload) => {
   return {
     type: TodoActionTypes.ADD_ITEM,
     payload,
   };
+};
+
+export type ItemAddPayload = {
+  newItem: TodoItemType;
 };
 
 export type ItemAddAction = {
