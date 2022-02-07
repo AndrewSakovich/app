@@ -13,8 +13,6 @@ export type TodoReducerState = {
   todoItems: any[];
 };
 
-type TodoAction = ItemAddAction | ItemDeleteAction;
-
 const initialState: TodoReducerState = {
   todoItems: [],
 };

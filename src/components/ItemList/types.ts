@@ -1,4 +1,4 @@
-import {TodoItemType} from '../../redux/actions/todoActions/addItemActions';
+import {TodoItemType} from '../../models';
 
 export type TodoItemPropsType = {
   todoItem: TodoItemType;
