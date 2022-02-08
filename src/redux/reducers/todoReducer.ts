@@ -45,12 +45,14 @@ export const todoReducer = (
     }
     case TodoActionTypes.DONE_ITEM: {
       const {id}: ItemDonePayload = action.payload;
+
+      //todo replace findIndex to find
       const idDoneItem = state.todoItems.findIndex((item: TodoItemType) => {
         return item.id === id;
       });
       const newItem = {...state.todoItems[idDoneItem], done: true};
-      const newItems = state.todoItems;
-      const item = state.todoItems.splice(idDoneItem, 1, newItem);
+      const newItems = state.todoItems; //todo make copy arr
+      const item = state.newItem.splice(idDoneItem, 1, newItem);
 
       return {
         ...state,
