@@ -1,5 +1,12 @@
 import React from 'react';
-import {View, FlatList, ListRenderItem, FlatListProps} from 'react-native';
+import {
+  View,
+  FlatList,
+  ListRenderItem,
+  FlatListProps,
+  TouchableOpacity,
+  Text,
+} from 'react-native';
 import {useSelector} from 'react-redux';
 import {TodoItem} from '../TodoItem';
 import {style} from './style';
@@ -8,7 +15,8 @@ import {todoItemsSelectors} from '../../redux/selectors/todoSelector';
 import {ReduxStoreType} from '../../redux/store';
 import {TodoItemType} from '../../models';
 
-export const ItemList: React.FC = () => {
+export const ItemList: React.FC = ({navigation}) => {
+  // console.log('props', props);
   const todoItems = useSelector<ReduxStoreType, TodoItemType[]>(
     todoItemsSelectors,
   );
@@ -23,6 +31,9 @@ export const ItemList: React.FC = () => {
 
   return (
     <View style={style.container}>
+      <TouchableOpacity onPress={() => navigation.navigate('AddItem')}>
+        <Text>{'ADD TODO'}</Text>
+      </TouchableOpacity>
       <FlatList
         data={todoItems}
         renderItem={renderItem}
