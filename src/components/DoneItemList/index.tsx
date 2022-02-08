@@ -4,14 +4,15 @@ import {useSelector} from 'react-redux';
 import {TodoItem} from '../TodoItem';
 import {style} from './style';
 import {StartWindow} from '../StartWindow';
-import {todoItemsSelectors} from '../../redux/selectors/todoSelector';
+import {doneItemsSelectors} from '../../redux/selectors/todoSelector';
 import {ReduxStoreType} from '../../redux/store';
 import {TodoItemType} from '../../models';
 
 export const DoneItemList: React.FC = () => {
   const todoItems = useSelector<ReduxStoreType, TodoItemType[]>(
-    todoItemsSelectors,
+    doneItemsSelectors,
   );
+  console.log('DONEITEMS', todoItems);
 
   const keyExtractor: FlatListProps<TodoItemType>['keyExtractor'] = item => {
     return item.id;

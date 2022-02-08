@@ -6,25 +6,15 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {ScreenLogin} from './components/ScreenLogin';
 import {faCoffee} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
-
-const Tab = createBottomTabNavigator();
+import {Provider} from 'react-redux';
+import {store} from './redux/store';
+import {StartScreen} from './components/StartScreen';
 
 const App: React.FC = () => {
   return (
-    <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen
-          name="Todo"
-          component={ScreenTodo}
-          options={{
-            tabBarIcon: () => {
-              return <FontAwesomeIcon icon={faCoffee} size={15} />;
-            },
-          }}
-        />
-        <Tab.Screen name="Login" component={ScreenLogin} />
-      </Tab.Navigator>
-    </NavigationContainer>
+    <Provider store={store}>
+      <StartScreen />
+    </Provider>
   );
 };
 
