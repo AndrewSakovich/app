@@ -17,7 +17,7 @@ const App: React.FC = () => {
           name="Todo"
           component={ScreenTodo}
           options={{
-            tabBarIcon: ({size, color}) => {
+            tabBarIcon: () => {
               return <FontAwesomeIcon icon={faCoffee} size={15} />;
             },
           }}

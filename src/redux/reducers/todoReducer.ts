@@ -1,13 +1,8 @@
 import {TodoItemType} from '../../models';
-import {
-  ItemAddAction,
-  ItemAddPayload,
-} from '../actions/todoActions/addItemActions';
-import {
-  ItemDeleteAction,
-  ItemDeletePayload,
-} from '../actions/todoActions/deleteItemActions';
+import {ItemAddPayload} from '../actions/todoActions/addItemActions';
+import {ItemDeletePayload} from '../actions/todoActions/deleteItemActions';
 import {TodoActionTypes} from '../actions/todoActions';
+import {ItemDonePayload} from '../actions/todoActions/doneItemActions';
 
 export type TodoReducerState = {
   todoItems: any[];
@@ -45,6 +40,32 @@ export const todoReducer = (
       return {
         ...state,
         todoItems: newTodoItems,
+      };
+    }
+    case TodoActionTypes.DONE_ITEM: {
+      const {id}: ItemDonePayload = action.payload;
+      const idDoneItem = state.todoItems.findIndex((item: TodoItemType) => {
+        return item.id === id;
+      });
+      const newItem = {...state.todoItems[idDoneItem], done: true};
+      const newTodoItems = state.todoItems.splice(idDoneItem, 1, newItem);
+      console.log('NEWTODOITEMS', newTodoItems);
+      console.log('NEWSTATE', state.todoItems);
+      return {
+        ...state,
+      };
+    }
+    case TodoActionTypes.DELETE_DONE_ITEM: {
+      const {id}: ItemDonePayload = action.payload;
+      const idDoneItem = state.todoItems.findIndex((item: TodoItemType) => {
+        return item.id === id;
+      });
+      const newItem = {...state.todoItems[idDoneItem], done: false};
+      const newTodoItems = state.todoItems.splice(idDoneItem, 1, newItem);
+      console.log('NEWTODOITEMS', newTodoItems);
+      console.log('NEWSTATE', state.todoItems);
+      return {
+        ...state,
       };
     }
   }

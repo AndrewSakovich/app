@@ -23,6 +23,7 @@ export const ItemAdd: React.FC = () => {
     return {
       id: uuid(),
       text,
+      done: false,
     };
   };
 
