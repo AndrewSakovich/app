@@ -15,7 +15,7 @@ import {todoItemsSelectors} from '../../redux/selectors/todoSelector';
 import {ReduxStoreType} from '../../redux/store';
 import {TodoItemType} from '../../models';
 
-export const ItemList: React.FC = ({navigation}) => {
+export const ItemList: React.FC = () => {
   // console.log('props', props);
   const todoItems = useSelector<ReduxStoreType, TodoItemType[]>(
     todoItemsSelectors,
@@ -31,9 +31,6 @@ export const ItemList: React.FC = ({navigation}) => {
 
   return (
     <View style={style.container}>
-      <TouchableOpacity onPress={() => navigation.navigate('AddItem')}>
-        <Text>{'ADD TODO'}</Text>
-      </TouchableOpacity>
       <FlatList
         data={todoItems}
         renderItem={renderItem}

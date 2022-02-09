@@ -1,19 +1,20 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
 import {style} from './style';
+import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
+import {faPlus} from '@fortawesome/free-solid-svg-icons';
+import {Color} from '../../color';
 
-export const TodoHeader: React.FC = () => {
+export const TodoHeader = ({navigation}) => {
   return (
     <View style={style.header}>
       <Text style={style.text}>{'APP TODO'}</Text>
-    </View>
-  );
-};
-
-export const LoginHeader: React.FC = () => {
-  return (
-    <View style={style.header}>
-      <Text style={style.text}>{'Log In'}</Text>
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate('AddItem');
+        }}>
+        <FontAwesomeIcon icon={faPlus} size={25} color={Color.white} />
+      </TouchableOpacity>
     </View>
   );
 };

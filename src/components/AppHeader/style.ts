@@ -8,11 +8,12 @@ type AppHeaderStyleType = {
 
 export const style = StyleSheet.create<AppHeaderStyleType>({
   header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 10,
     height: 45,
     backgroundColor: Color.sapphire,
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-    paddingBottom: 10,
+    justifyContent: 'space-between',
   },
   text: {
     color: Color.white,
