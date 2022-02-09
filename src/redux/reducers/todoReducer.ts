@@ -53,17 +53,18 @@ export const todoReducer = (
     }
     case TodoActionTypes.DONE_ITEM: {
       const {id}: ItemDonePayload = action.payload;
-      const doneItem = {
-        ...state.todoItems.find(item => {
-          return item.id === id;
-        }),
-        done: true,
+
+      const item = state.todoItems.find(item => {
+        return item.id === id;
+      });
+      const newItem = {
+        ...item,
+        done: !item.done,
       };
       const newTodoItems = state.todoItems.filter((item: TodoItemType) => {
         return item.id !== id;
       });
-      console.log('doneItem', doneItem);
-      console.log('TODOITEM', newTodoItems);
+
       return {
         ...state,
         todoItems: newTodoItems,
@@ -72,16 +73,19 @@ export const todoReducer = (
     }
     case TodoActionTypes.DELETE_DONE_ITEM: {
       const {id}: DeleteItemDonePayload = action.payload;
-      const idDoneItem = state.todoItems.findIndex((item: TodoItemType) => {
-        return item.id === id;
+      const newItem = {
+        ...state.doneItems.find(item => {
+          return item.id === id;
+        }),
+        done: false,
+      };
+      const newDoneItems = state.doneItems.filter((item: TodoItemType) => {
+        return item.id !== id;
       });
-      const newItem = {...state.todoItems[idDoneItem], done: false};
-      const newItems = state.todoItems;
-      const item = state.todoItems.splice(idDoneItem, 1, newItem);
-
       return {
         ...state,
-        todoItems: newItems,
+        todoItems: [...state.todoItems, newItem],
+        doneItems: newDoneItems,
       };
     }
   }

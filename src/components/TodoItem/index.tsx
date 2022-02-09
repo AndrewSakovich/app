@@ -18,6 +18,9 @@ export const TodoItem: FC<TodoItemPropsType> = props => {
   const textStyle: TextStyle = done ? style.doneText : style.text;
 
   const onPressDone = () => {
+    if (flag) {
+      dispatch(deleteDoneItemActions({id}));
+    }
     dispatch(doneItemActions({id}));
   };
 
