@@ -13,15 +13,10 @@ import {TodoItemType} from '../../models';
 
 export const ItemList: React.FC = ({route}) => {
   const flagDone = route.params.done;
-  console.log('FLAG', flagDone);
-  const todoItems = useSelector<ReduxStoreType, TodoItemType[]>(
-    todoItemsSelectors,
+
+  const data = useSelector<ReduxStoreType, TodoItemType[]>(
+    doneItemsSelectors(flagDone),
   );
-  const doneItems = useSelector<ReduxStoreType, TodoItemType[]>(
-    doneItemsSelectors,
-  );
-  const data = flagDone ? doneItems : todoItems;
-  console.log('ITEM', data);
 
   const keyExtractor: FlatListProps<TodoItemType>['keyExtractor'] = item => {
     return item.id;
