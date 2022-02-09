@@ -10,6 +10,7 @@ import {deleteDoneItemActions} from '../../redux/actions/todoActions/deleteDoneI
 export const TodoItem: FC<TodoItemPropsType> = props => {
   const {
     todoItem: {id, text, done},
+    flag,
   } = props;
 
   const dispatch = useDispatch();
@@ -28,7 +29,7 @@ export const TodoItem: FC<TodoItemPropsType> = props => {
       {
         text: 'OK',
         onPress: () => {
-          dispatch(deleteItemAction({id}));
+          dispatch(deleteItemAction({id, flag}));
         },
       },
     ]);

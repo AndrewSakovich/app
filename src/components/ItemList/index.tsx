@@ -11,7 +11,7 @@ import {
 import {ReduxStoreType} from '../../redux/store';
 import {TodoItemType} from '../../models';
 
-export const ItemList: React.FC = ({route, navigation}) => {
+export const ItemList: React.FC = ({route}) => {
   const flagDone = route.params.done;
   console.log('FLAG', flagDone);
   const todoItems = useSelector<ReduxStoreType, TodoItemType[]>(
@@ -28,7 +28,7 @@ export const ItemList: React.FC = ({route, navigation}) => {
   };
 
   const renderItem: ListRenderItem<TodoItemType> = ({item}) => {
-    return <TodoItem todoItem={item} />;
+    return <TodoItem todoItem={item} flag={flagDone} />;
   };
 
   return (

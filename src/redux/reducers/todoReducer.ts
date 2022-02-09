@@ -34,12 +34,18 @@ export const todoReducer = (
       };
     }
     case TodoActionTypes.DELETE_ITEM: {
-      const {id}: ItemDeletePayload = action.payload;
+      const {id, flag}: ItemDeletePayload = action.payload;
 
-      const newTodoItems = state.todoItems.filter((item: TodoItemType) => {
+      const arrItems = flag ? state.doneItems : state.todoItems;
+      const newTodoItems = arrItems.filter((item: TodoItemType) => {
         return item.id !== id;
       });
-
+      if (flag) {
+        return {
+          ...state,
+          doneItems: newTodoItems,
+        };
+      }
       return {
         ...state,
         todoItems: newTodoItems,
