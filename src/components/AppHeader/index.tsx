@@ -11,7 +11,7 @@ export const TodoHeader = ({navigation}) => {
       <Text style={style.text}>{'APP TODO'}</Text>
       <TouchableOpacity
         onPress={() => {
-          navigation.navigate('AddItem');
+          navigation.navigate('Add new task');
         }}>
         <FontAwesomeIcon icon={faPlus} size={25} color={Color.white} />
       </TouchableOpacity>

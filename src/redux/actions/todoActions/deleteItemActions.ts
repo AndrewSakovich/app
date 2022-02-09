@@ -9,7 +9,7 @@ export const deleteItemAction = (payload: ItemDeletePayload) => {
 
 export type ItemDeletePayload = {
   id: string;
-  flag: boolean;
+  done: boolean;
 };
 
 export type ItemDeleteAction = {

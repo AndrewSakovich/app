@@ -5,12 +5,10 @@ import {useDispatch} from 'react-redux';
 import {deleteItemAction} from '../../redux/actions/todoActions/deleteItemActions';
 import {TodoItemPropsType} from '../ItemList/types';
 import {doneItemActions} from '../../redux/actions/todoActions/doneItemActions';
-import {deleteDoneItemActions} from '../../redux/actions/todoActions/deleteDoneItemAction';
 
 export const TodoItem: FC<TodoItemPropsType> = props => {
   const {
     todoItem: {id, text, done},
-    flag,
   } = props;
 
   const dispatch = useDispatch();
@@ -18,9 +16,6 @@ export const TodoItem: FC<TodoItemPropsType> = props => {
   const textStyle: TextStyle = done ? style.doneText : style.text;
 
   const onPressDone = () => {
-    if (flag) {
-      dispatch(deleteDoneItemActions({id}));
-    }
     dispatch(doneItemActions({id}));
   };
 
@@ -32,7 +27,7 @@ export const TodoItem: FC<TodoItemPropsType> = props => {
       {
         text: 'OK',
         onPress: () => {
-          dispatch(deleteItemAction({id, flag}));
+          dispatch(deleteItemAction({id, done}));
         },
       },
     ]);
