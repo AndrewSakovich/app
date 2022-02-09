@@ -7,10 +7,12 @@ import {DeleteItemDonePayload} from '../actions/todoActions/deleteDoneItemAction
 
 export type TodoReducerState = {
   todoItems: any[];
+  doneItems: any[];
 };
 
 const initialState: TodoReducerState = {
   todoItems: [],
+  doneItems: [],
 };
 
 export const todoReducer = (
@@ -45,18 +47,21 @@ export const todoReducer = (
     }
     case TodoActionTypes.DONE_ITEM: {
       const {id}: ItemDonePayload = action.payload;
-
-      //todo replace findIndex to find
-      const idDoneItem = state.todoItems.findIndex((item: TodoItemType) => {
-        return item.id === id;
+      const doneItem = {
+        ...state.todoItems.find(item => {
+          return item.id === id;
+        }),
+        done: true,
+      };
+      const newTodoItems = state.todoItems.filter((item: TodoItemType) => {
+        return item.id !== id;
       });
-      const newItem = {...state.todoItems[idDoneItem], done: true};
-      const newItems = state.todoItems; //todo make copy arr
-      const item = state.newItem.splice(idDoneItem, 1, newItem);
-
+      console.log('doneItem', doneItem);
+      console.log('TODOITEM', newTodoItems);
       return {
         ...state,
-        todoItems: newItems,
+        todoItems: newTodoItems,
+        doneItems: [...state.doneItems, doneItem],
       };
     }
     case TodoActionTypes.DELETE_DONE_ITEM: {

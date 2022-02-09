@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  View,
-  FlatList,
-  ListRenderItem,
-  FlatListProps,
-  TouchableOpacity,
-  Text,
-} from 'react-native';
+import {View, FlatList, ListRenderItem, FlatListProps} from 'react-native';
 import {useSelector} from 'react-redux';
 import {TodoItem} from '../TodoItem';
 import {style} from './style';
@@ -16,10 +9,10 @@ import {ReduxStoreType} from '../../redux/store';
 import {TodoItemType} from '../../models';
 
 export const ItemList: React.FC = () => {
-  // console.log('props', props);
   const todoItems = useSelector<ReduxStoreType, TodoItemType[]>(
     todoItemsSelectors,
   );
+  console.log('ITEM', todoItems);
 
   const keyExtractor: FlatListProps<TodoItemType>['keyExtractor'] = item => {
     return item.id;

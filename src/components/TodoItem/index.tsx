@@ -1,5 +1,5 @@
 import {Text, View, Alert, TouchableOpacity, TextStyle} from 'react-native';
-import React, {FC, useState} from 'react';
+import React, {FC} from 'react';
 import {style} from './style';
 import {useDispatch} from 'react-redux';
 import {deleteItemAction} from '../../redux/actions/todoActions/deleteItemActions';
@@ -9,24 +9,15 @@ import {deleteDoneItemActions} from '../../redux/actions/todoActions/deleteDoneI
 
 export const TodoItem: FC<TodoItemPropsType> = props => {
   const {
-    todoItem: {id, text},
+    todoItem: {id, text, done},
   } = props;
 
   const dispatch = useDispatch();
 
-  const [done, setDone] = useState<boolean>(false);
-
   const textStyle: TextStyle = done ? style.doneText : style.text;
 
   const onPressDone = () => {
-    if (done === false) {
-      dispatch(doneItemActions({id}));
-      setDone(true);
-    }
-    if (done === true) {
-      dispatch(deleteDoneItemActions({id}));
-      setDone(false);
-    }
+    dispatch(doneItemActions({id}));
   };
 
   const onPressDelete = () => {
