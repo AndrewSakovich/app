@@ -1,9 +1,6 @@
 import {ReduxStoreType} from '../store';
 
-export const todoItemsSelectors = (state: ReduxStoreType) => {
-  return state.todoItems;
-};
-
-export const doneItemsSelectors = (state: ReduxStoreType) => {
-  return state.doneItems;
-};
+export const doneItemsSelectors =
+  (flagDone: boolean) => (state: ReduxStoreType) => {
+    return flagDone ? state.doneItems : state.todoItems;
+  };
