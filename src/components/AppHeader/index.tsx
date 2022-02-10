@@ -1,11 +1,12 @@
-import React from 'react';
+import React, {FC} from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 import {style} from './style';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
-import {faPlus, faArrowLeft} from '@fortawesome/free-solid-svg-icons';
+import {faPlus} from '@fortawesome/free-solid-svg-icons';
 import {Color} from '../../color';
+import {NavigationProps} from '../../models';
 
-export const TodoHeader = ({navigation}) => {
+export const TodoHeader: FC<NavigationProps> = ({navigation}) => {
   return (
     <View style={style.header}>
       <Text style={style.text}>{'APP TODO'}</Text>

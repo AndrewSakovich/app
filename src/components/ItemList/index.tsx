@@ -6,9 +6,9 @@ import {style} from './style';
 import {StartWindow} from '../StartWindow';
 import {doneItemsSelectors} from '../../redux/selectors/todoSelector';
 import {ReduxStoreType} from '../../redux/store';
-import {TodoItemType} from '../../models';
+import {RouteNavigationProps, TodoItemType} from '../../models';
 
-export const ItemList: React.FC = ({route}) => {
+export const ItemList: React.FC<RouteNavigationProps> = ({route}) => {
   const flagDone = route.params.done;
 
   const data = useSelector<ReduxStoreType, TodoItemType[]>(

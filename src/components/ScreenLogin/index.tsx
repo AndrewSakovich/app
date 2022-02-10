@@ -23,7 +23,7 @@ export const ScreenLogin: React.FC = () => {
         />
       </View>
       <TouchableOpacity style={style.button}>
-        <Text style={style.loginText}>{'Login'}</Text>
+        <Text style={style.loginText}>{'Sig in'}</Text>
       </TouchableOpacity>
     </View>
   );
