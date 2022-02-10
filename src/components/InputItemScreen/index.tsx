@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   View,
   TextStyle,
+  ViewStyle,
 } from 'react-native';
 import {style} from './style';
 import {useDispatch} from 'react-redux';
@@ -17,7 +18,7 @@ import {TodoItemType} from '../../models';
 export const ItemAdd: React.FC = () => {
   const dispatch = useDispatch();
   const [text, setText] = useState<string>('');
-  const buttonStyle: TextStyle = text ? style.text : style.textDis;
+  const buttonStyle: ViewStyle = text ? style.button : style.buttonDis;
 
   const createNewItem = (text: TodoItemType['text']): TodoItemType => {
     return {
@@ -49,8 +50,8 @@ export const ItemAdd: React.FC = () => {
         value={text}
         selectionColor={Color.black}
       />
-      <TouchableOpacity disabled={!text} style={style.button} onPress={onPress}>
-        <Text style={buttonStyle}>{'Add'}</Text>
+      <TouchableOpacity disabled={!text} style={buttonStyle} onPress={onPress}>
+        <Text style={style.text}>{'Add new task'}</Text>
       </TouchableOpacity>
     </View>
   );

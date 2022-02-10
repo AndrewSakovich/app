@@ -4,6 +4,7 @@ import {Color} from '../../color';
 type ItemAddStylesType = {
   container: ViewStyle;
   button: ViewStyle;
+  buttonDis: ViewStyle;
   input: ViewStyle;
   text: TextStyle;
   textDis: TextStyle;
@@ -13,10 +14,12 @@ export const style = StyleSheet.create<ItemAddStylesType>({
   container: {
     padding: 10,
     flexDirection: 'column',
+    justifyContent: 'space-between',
     flex: 1,
   },
   button: {
-    height: '30%',
+    height: 40,
+    backgroundColor: Color.sapphire,
     borderStyle: 'solid',
     borderWidth: 1,
     borderRadius: 5,
@@ -24,18 +27,27 @@ export const style = StyleSheet.create<ItemAddStylesType>({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  buttonDis: {
+    height: 40,
+    backgroundColor: Color.silver,
+    borderRadius: 5,
+    borderColor: Color.sapphire,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 
   input: {
-    flex: 1,
+    borderWidth: 1,
+    borderRadius: 5,
+    borderColor: Color.sapphire,
     paddingHorizontal: 10,
     width: '100%',
     backgroundColor: Color.cararra,
-    borderRadius: 5,
     height: 40,
   },
   text: {
     fontSize: 18,
-    color: Color.sapphire,
+    color: Color.white,
   },
   textDis: {
     fontSize: 18,
