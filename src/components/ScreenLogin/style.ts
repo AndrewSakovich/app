@@ -8,6 +8,7 @@ type ScreenLoginStylesType = {
   button: ViewStyle;
   buttonDis: ViewStyle;
   loginText: TextStyle;
+  registr: ViewStyle;
 };
 export const style = StyleSheet.create<ScreenLoginStylesType>({
   container: {
@@ -52,5 +53,9 @@ export const style = StyleSheet.create<ScreenLoginStylesType>({
   loginText: {
     fontSize: 18,
     color: Color.white,
+  },
+  registr: {
+    alignItems: 'center',
+    color: Color.silver,
   },
 });

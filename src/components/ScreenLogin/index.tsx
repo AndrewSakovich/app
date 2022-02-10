@@ -18,16 +18,16 @@ export const ScreenLogin: React.FC = () => {
         <TextInput
           selectionColor={Color.black}
           style={style.input}
-          placeholder="enter assword"
+          placeholder="enter password"
           keyboardType="default"
         />
       </View>
       <View>
-        <TouchableOpacity style={style.button}>
-          <Text style={style.loginText}>{'Sig in'}</Text>
+        <TouchableOpacity style={style.registr}>
+          <Text style={style.registr}>{'registration'}</Text>
         </TouchableOpacity>
         <TouchableOpacity style={style.button}>
-          <Text style={style.loginText}>{'registration'}</Text>
+          <Text style={style.loginText}>{'Sig in'}</Text>
         </TouchableOpacity>
       </View>
     </View>
