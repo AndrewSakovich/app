@@ -4,12 +4,12 @@ import {style} from './style';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faPlus} from '@fortawesome/free-solid-svg-icons';
 import {Color} from '../../color';
-import {NavigationProps} from '../../models';
+import {NavigationProp, useNavigation} from '@react-navigation/native';
 
-export const TodoHeader: FC<NavigationProps> = ({navigation}) => {
+export const TodoHeader: FC = () => {
+  const navigation = useNavigation<NavigationProp>();
   return (
     <View style={style.header}>
-      <Text style={style.text}>{'APP TODO'}</Text>
       <TouchableOpacity
         onPress={() => {
           return navigation.navigate('Add new task');
