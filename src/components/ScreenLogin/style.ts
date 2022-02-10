@@ -31,6 +31,7 @@ export const style = StyleSheet.create<ScreenLoginStylesType>({
     color: Color.black,
   },
   button: {
+    margin: 5,
     height: 40,
     backgroundColor: Color.sapphire,
     borderStyle: 'solid',

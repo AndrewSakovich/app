@@ -22,9 +22,14 @@ export const ScreenLogin: React.FC = () => {
           keyboardType="default"
         />
       </View>
-      <TouchableOpacity style={style.button}>
-        <Text style={style.loginText}>{'Sig in'}</Text>
-      </TouchableOpacity>
+      <View>
+        <TouchableOpacity style={style.button}>
+          <Text style={style.loginText}>{'Sig in'}</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={style.button}>
+          <Text style={style.loginText}>{'registration'}</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };

@@ -8,7 +8,7 @@ export type TodoItemType = {
   done: boolean;
 };
 export type NavigationProps = {
-  navigation: StackNavigationProp<ParamListBase>;
+  navigation: any;
 };
 export type RouteNavigationProps = {
   route: any;
