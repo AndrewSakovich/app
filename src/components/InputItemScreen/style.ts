@@ -12,17 +12,22 @@ type ItemAddStylesType = {
 export const style = StyleSheet.create<ItemAddStylesType>({
   container: {
     padding: 10,
-    flexDirection: 'row',
+    flexDirection: 'column',
+    flex: 1,
   },
   button: {
+    height: '30%',
+    borderStyle: 'solid',
+    borderWidth: 1,
+    borderRadius: 5,
+    borderColor: Color.sapphire,
     alignItems: 'center',
     justifyContent: 'center',
-    marginLeft: 10,
   },
 
   input: {
-    paddingHorizontal: 10,
     flex: 1,
+    paddingHorizontal: 10,
     width: '100%',
     backgroundColor: Color.cararra,
     borderRadius: 5,

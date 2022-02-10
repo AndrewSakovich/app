@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 import {style} from './style';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
-import {faPlus} from '@fortawesome/free-solid-svg-icons';
+import {faPlus, faArrowLeft} from '@fortawesome/free-solid-svg-icons';
 import {Color} from '../../color';
 
 export const TodoHeader = ({navigation}) => {
@@ -11,7 +11,7 @@ export const TodoHeader = ({navigation}) => {
       <Text style={style.text}>{'APP TODO'}</Text>
       <TouchableOpacity
         onPress={() => {
-          navigation.navigate('Add new task');
+          return navigation.navigate('Add new task');
         }}>
         <FontAwesomeIcon icon={faPlus} size={25} color={Color.white} />
       </TouchableOpacity>
