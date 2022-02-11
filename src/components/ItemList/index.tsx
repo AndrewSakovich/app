@@ -3,12 +3,15 @@ import {View, FlatList, ListRenderItem, FlatListProps} from 'react-native';
 import {useSelector} from 'react-redux';
 import {TodoItem} from '../TodoItem';
 import {style} from './style';
-import {StartWindow} from '../StartWindow';
+import {TodoListEmptyComponent} from '../TodoListEmptyComponent';
 import {doneItemsSelectors} from '../../redux/selectors/todoSelector';
 import {ReduxStoreType} from '../../redux/store';
-import {RouteNavigationProps, TodoItemType} from '../../models';
+import {TodoItemType} from '../../models';
+import {ItemListNavigationProps} from '../../navigators/TodoListTopNavigation/type';
 
-export const ItemList: React.FC<RouteNavigationProps> = ({route}) => {
+export const ItemList: React.FC<ItemListNavigationProps> = props => {
+  console.log('PROPS', props);
+  const {route} = props;
   const flagDone = route.params.done;
 
   const data = useSelector<ReduxStoreType, TodoItemType[]>(
@@ -29,7 +32,7 @@ export const ItemList: React.FC<RouteNavigationProps> = ({route}) => {
         data={data}
         renderItem={renderItem}
         keyExtractor={keyExtractor}
-        ListEmptyComponent={<StartWindow />}
+        ListEmptyComponent={<TodoListEmptyComponent />}
       />
     </View>
   );
