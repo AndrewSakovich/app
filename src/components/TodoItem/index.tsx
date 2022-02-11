@@ -13,7 +13,7 @@ export const TodoItem: FC<TodoItemPropsType> = props => {
 
   const dispatch = useDispatch();
 
-  const textStyle: TextStyle = done ? style.doneText : style.text;
+  const textStyle = done ? style.doneText : style.text;
 
   const onPressDone = () => {
     dispatch(doneItemActions({id}));
@@ -35,10 +35,9 @@ export const TodoItem: FC<TodoItemPropsType> = props => {
 
   return (
     <View style={style.item}>
-      <TouchableOpacity onPress={onPressDone}>
+      <TouchableOpacity style={style.touch} onPress={onPressDone}>
         <Text style={textStyle}>{text}</Text>
       </TouchableOpacity>
-
       <Text style={style.delete} onPress={onPressDelete}>
         {'DELETE'}
       </Text>

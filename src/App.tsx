@@ -2,8 +2,7 @@ import React from 'react';
 import 'react-native-get-random-values';
 import {Provider} from 'react-redux';
 import {store} from './redux/store';
-import {MainBottonTabNavigation} from './components/MainBottonTabNavigation';
-import {StackNavigation} from './components/StackNavigation';
+import {StackNavigation} from './navigators/RootStackNavigation';
 
 const App: React.FC = () => {
   return (

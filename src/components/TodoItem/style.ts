@@ -24,4 +24,7 @@ export const style = StyleSheet.create({
   delete: {
     color: '#FFFFFF',
   },
+  touch: {
+    flex: 1,
+  },
 });
