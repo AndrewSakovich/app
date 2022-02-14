@@ -13,8 +13,10 @@ import {itemAddAction} from '../../redux/actions/todoActions/addItemActions';
 import {Color} from '../../color';
 import {v4 as uuid} from 'uuid';
 import {TodoItemType} from '../../models';
+import {AddNewItemNavigationProps} from './type';
 
-export const AddNewItemScreen: React.FC = () => {
+export const AddNewItemScreen: React.FC<AddNewItemNavigationProps> = props => {
+  const {navigation} = props;
   const dispatch = useDispatch();
   const [text, setText] = useState<string>('');
   const buttonStyle: ViewStyle = text ? style.button : style.buttonDis;
@@ -37,6 +39,7 @@ export const AddNewItemScreen: React.FC = () => {
     Keyboard.dismiss();
     addItem(text);
     setText('');
+    navigation.goBack();
   };
 
   return (

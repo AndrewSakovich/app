@@ -1,4 +1,4 @@
 export type MainBottomTabParamList = {
-  Todo: {};
-  Login: {};
+  TodoListTopNavigation: undefined;
+  ScreenLogin: undefined;
 };

@@ -5,6 +5,7 @@ import {MainBottomTabNavigation} from '../MainBottomTabNavigation';
 import {AddNewItemScreen} from '../../components/AddNewItemScreen';
 import {Color} from '../../color';
 import {RootStackNavigationParamList} from './type';
+import {nameScreen} from '../nameScreen';
 
 export const StackNavigation: React.FC = () => {
   const Stack = createStackNavigator<RootStackNavigationParamList>();
@@ -13,14 +14,14 @@ export const StackNavigation: React.FC = () => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name={'MainBottomTabNavigation'}
+          name={nameScreen.MAIN_BOTTOM_TAB_NAVIGATION}
           component={MainBottomTabNavigation}
           options={{
             headerShown: false,
           }}
         />
         <Stack.Screen
-          name={'AddNewItemScreen'}
+          name={nameScreen.ADD_NEW_ITEM_SCREEN}
           component={AddNewItemScreen}
           options={{
             title: 'Add new task',
