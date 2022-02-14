@@ -27,7 +27,7 @@ export const style = StyleSheet.create<ScreenLoginStylesType>({
     height: 40,
   },
   text: {
-    padding: 10,
+    paddingBottom: 10,
     fontSize: 18,
     color: Color.black,
   },

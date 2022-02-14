@@ -14,5 +14,5 @@ export type ItemAddPayload = {
 
 export type ItemAddAction = {
   type: TodoActionTypes.ADD_ITEM;
-  payload: TodoItemType;
+  payload: ItemAddPayload;
 };

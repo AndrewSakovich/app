@@ -10,7 +10,6 @@ import {TodoItemType} from '../../models';
 import {ItemListNavigationProps} from '../../navigators/TodoListTopNavigation/type';
 
 export const ItemList: React.FC<ItemListNavigationProps> = props => {
-  console.log('PROPS', props);
   const {route} = props;
   const flagDone = route.params.done;
 

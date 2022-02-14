@@ -7,7 +7,7 @@ export const ScreenLogin: React.FC = () => {
   return (
     <View style={style.container}>
       <View>
-        <Text style={style.text}>{'login'}</Text>
+        <Text style={style.text}>{'Login'}</Text>
         <TextInput
           style={style.input}
           selectionColor={Color.black}

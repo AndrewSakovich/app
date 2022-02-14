@@ -1,8 +1,8 @@
 import {NativeStackNavigationProp} from 'react-native-screens/native-stack';
 
 export type RootStackNavigationParamList = {
-  AppTodo: {} | undefined;
-  AddNewTask: {} | undefined;
+  AppTodo: {};
+  AddNewTask: {};
 };
 export type AddNewTaskNavigationProp = NativeStackNavigationProp<
   RootStackNavigationParamList,

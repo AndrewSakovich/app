@@ -1,12 +1,12 @@
 import React from 'react';
 import {StyleSheet, TextStyle, ViewStyle} from 'react-native';
 
-type StartWindowStyleType = {
+type TodoListEmptyComponentType = {
   container: ViewStyle;
   text: TextStyle;
 };
 
-export const style = StyleSheet.create<StartWindowStyleType>({
+export const style = StyleSheet.create<TodoListEmptyComponentType>({
   container: {
     marginTop: 100,
     flex: 1,
