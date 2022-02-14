@@ -7,7 +7,7 @@ import {TodoListEmptyComponent} from '../TodoListEmptyComponent';
 import {doneItemsSelectors} from '../../redux/selectors/todoSelector';
 import {ReduxStoreType} from '../../redux/store';
 import {TodoItemType} from '../../models';
-import {ItemListNavigationProps} from '../../navigators/TodoListTopNavigation/type';
+import {ItemListNavigationProps} from './types';
 
 export const ItemList: React.FC<ItemListNavigationProps> = props => {
   const {route} = props;

@@ -1,8 +1,8 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
-import {MainBottonTabNavigation} from '../MainBottonTabNavigation';
-import {ItemAdd} from '../../components/InputItemScreen';
+import {MainBottomTabNavigation} from '../MainBottomTabNavigation';
+import {AddNewItemScreen} from '../../components/AddNewItemScreen';
 import {Color} from '../../color';
 import {RootStackNavigationParamList} from './type';
 
@@ -13,15 +13,15 @@ export const StackNavigation: React.FC = () => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name={'AppTodo'}
-          component={MainBottonTabNavigation}
+          name={'MainBottomTabNavigation'}
+          component={MainBottomTabNavigation}
           options={{
             headerShown: false,
           }}
         />
         <Stack.Screen
-          name={'AddNewTask'}
-          component={ItemAdd}
+          name={'AddNewItemScreen'}
+          component={AddNewItemScreen}
           options={{
             title: 'Add new task',
             headerTintColor: Color.white,

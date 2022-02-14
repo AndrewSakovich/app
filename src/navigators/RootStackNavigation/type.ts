@@ -1,10 +1,7 @@
-import {NativeStackNavigationProp} from 'react-native-screens/native-stack';
+import {NavigatorScreenParams} from '@react-navigation/native';
+import {MainBottomTabParamList} from '../MainBottomTabNavigation/type';
 
 export type RootStackNavigationParamList = {
-  AppTodo: {};
-  AddNewTask: {};
+  MainBottomTabNavigation: NavigatorScreenParams<MainBottomTabParamList>;
+  AddNewItemScreen: undefined;
 };
-export type AddNewTaskNavigationProp = NativeStackNavigationProp<
-  RootStackNavigationParamList,
-  'AddNewTask'
->;

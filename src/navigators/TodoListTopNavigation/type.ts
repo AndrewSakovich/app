@@ -1,18 +1,15 @@
-import {MaterialTopTabScreenProps} from '@react-navigation/material-top-tabs/src/types';
+import {CompositeNavigationProp} from '@react-navigation/native';
+import {MainBottomTabParamList} from '../MainBottomTabNavigation/type';
+import {BottomTabNavigationProp} from '@react-navigation/bottom-tabs';
+import {StackNavigationProp} from '@react-navigation/stack';
+import {RootStackNavigationParamList} from '../RootStackNavigation/type';
 
 export type TodoListTopNavigationParamList = {
   Items: {done: boolean};
   DoneItem: {done: boolean};
 };
 
-export type ItemNavigationProps = MaterialTopTabScreenProps<
-  TodoListTopNavigationParamList,
-  'Items'
+export type TodoListTopNavigationProp = CompositeNavigationProp<
+  BottomTabNavigationProp<MainBottomTabParamList, 'Todo'>,
+  StackNavigationProp<RootStackNavigationParamList>
 >;
-export type DoneItemNavigatioProps = MaterialTopTabScreenProps<
-  TodoListTopNavigationParamList,
-  'DoneItem'
->;
-export type ItemListNavigationProps =
-  | DoneItemNavigatioProps
-  | ItemNavigationProps;

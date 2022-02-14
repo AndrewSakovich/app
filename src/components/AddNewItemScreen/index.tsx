@@ -14,7 +14,7 @@ import {Color} from '../../color';
 import {v4 as uuid} from 'uuid';
 import {TodoItemType} from '../../models';
 
-export const ItemAdd: React.FC = () => {
+export const AddNewItemScreen: React.FC = () => {
   const dispatch = useDispatch();
   const [text, setText] = useState<string>('');
   const buttonStyle: ViewStyle = text ? style.button : style.buttonDis;

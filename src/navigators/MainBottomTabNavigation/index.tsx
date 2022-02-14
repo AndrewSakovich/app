@@ -6,10 +6,10 @@ import {ScreenLogin} from '../../components/ScreenLogin';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Color} from '../../color';
 import {TodoHeader} from '../../components/AppHeader';
-import {MainBottonTabParamList} from './type';
+import {MainBottomTabParamList} from './type';
 
-export const MainBottonTabNavigation: React.FC = () => {
-  const Tab = createBottomTabNavigator<MainBottonTabParamList>();
+export const MainBottomTabNavigation: React.FC = () => {
+  const Tab = createBottomTabNavigator<MainBottomTabParamList>();
 
   return (
     <Tab.Navigator
