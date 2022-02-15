@@ -1,12 +1,12 @@
 import React from 'react';
 import {StyleSheet, TextStyle, ViewStyle} from 'react-native';
 
-type TodoListEmptyComponentType = {
+type TodoListEmptyComponentStyleType = {
   container: ViewStyle;
   text: TextStyle;
 };
 
-export const style = StyleSheet.create<TodoListEmptyComponentType>({
+export const style = StyleSheet.create<TodoListEmptyComponentStyleType>({
   container: {
     marginTop: 100,
     flex: 1,

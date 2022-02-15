@@ -1,9 +1,9 @@
-import {Text, View, Alert, TouchableOpacity, TextStyle} from 'react-native';
+import {Text, View, Alert, TouchableOpacity} from 'react-native';
 import React, {FC} from 'react';
 import {style} from './style';
 import {useDispatch} from 'react-redux';
 import {deleteItemAction} from '../../redux/actions/todoActions/deleteItemActions';
-import {TodoItemPropsType} from '../ItemList/types';
+import {TodoItemPropsType} from '../../screens/ItemListScreen/types';
 import {doneItemActions} from '../../redux/actions/todoActions/doneItemActions';
 
 export const TodoItem: FC<TodoItemPropsType> = props => {

@@ -5,10 +5,11 @@ import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faPlus} from '@fortawesome/free-solid-svg-icons';
 import {Color} from '../../color';
 import {useNavigation} from '@react-navigation/native';
-import {TodoListTopNavigationProp} from '../../navigators/TodoListTopNavigation/type';
+import {TodoListTopNavigationProp} from '../../navigators/TodoListTopNavigator/type';
 
-export const TodoHeader: FC = () => {
+export const TodoListTopNavigatorHeader: FC = () => {
   const navigation = useNavigation<TodoListTopNavigationProp>();
+
   const getNavigate = () => {
     navigation.navigate('AddNewItemScreen');
   };

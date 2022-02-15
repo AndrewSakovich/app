@@ -9,36 +9,29 @@ import {
 } from 'react-native';
 import {style} from './style';
 import {useDispatch} from 'react-redux';
-import {itemAddAction} from '../../redux/actions/todoActions/addItemActions';
+import {addItemAction} from '../../redux/actions/todoActions/addItemActions';
 import {Color} from '../../color';
 import {v4 as uuid} from 'uuid';
+import {createNewItemHelper} from '../../helpers/createNewItem';
 import {TodoItemType} from '../../models';
-import {AddNewItemNavigationProps} from './type';
+import {AddNewItemScreenNavigationProps} from './type';
 
-export const AddNewItemScreen: React.FC<AddNewItemNavigationProps> = props => {
+export const AddNewItemScreen: React.FC<
+  AddNewItemScreenNavigationProps
+> = props => {
   const {navigation} = props;
   const dispatch = useDispatch();
   const [text, setText] = useState<string>('');
   const buttonStyle: ViewStyle = text ? style.button : style.buttonDis;
 
-  const createNewItem = (text: TodoItemType['text']): TodoItemType => {
-    return {
-      id: uuid(),
-      text,
-      done: false,
-    };
-  };
-
   const addItem = (text: TodoItemType['text']) => {
-    const newItem = createNewItem(text);
+    const newItem = createNewItemHelper(text);
 
-    dispatch(itemAddAction({newItem}));
+    dispatch(addItemAction({newItem}));
   };
 
   const onPress = () => {
-    Keyboard.dismiss();
     addItem(text);
-    setText('');
     navigation.goBack();
   };
 

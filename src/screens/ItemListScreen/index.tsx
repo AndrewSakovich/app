@@ -1,15 +1,15 @@
 import React from 'react';
 import {View, FlatList, ListRenderItem, FlatListProps} from 'react-native';
 import {useSelector} from 'react-redux';
-import {TodoItem} from '../TodoItem';
+import {TodoItem} from '../../components/TodoItem';
 import {style} from './style';
-import {TodoListEmptyComponent} from '../TodoListEmptyComponent';
+import {TodoListEmptyComponent} from '../../components/TodoListEmptyComponent';
 import {doneItemsSelectors} from '../../redux/selectors/todoSelector';
 import {ReduxStoreType} from '../../redux/store';
 import {TodoItemType} from '../../models';
 import {ItemListNavigationProps} from './types';
 
-export const ItemList: React.FC<ItemListNavigationProps> = props => {
+export const ItemListScreen: React.FC<ItemListNavigationProps> = props => {
   const {route} = props;
   const flagDone = route.params.done;
 

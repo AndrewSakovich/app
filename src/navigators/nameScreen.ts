@@ -1,8 +1,8 @@
 export enum nameScreen {
-  TODO_LIST_TOP_NAVIGATION = 'TodoListTopNavigation',
-  SCREEN_LOGIN = 'ScreenLogin',
-  MAIN_BOTTOM_TAB_NAVIGATION = 'MainBottomTabNavigation',
+  TODO_LIST_TOP_NAVIGATOR = 'TodoListTopNavigator',
+  SCREEN_LOGIN = 'LoginScreen',
+  MAIN_BOTTOM_TAB_NAVIGATOR = 'MainBottomTabNavigator',
   ADD_NEW_ITEM_SCREEN = 'AddNewItemScreen',
-  ITEMS = 'Items',
-  DONE_ITEMS = 'DoneItem',
+  ITEMS_SCREEN = 'ItemsScreen',
+  DONE_ITEMS_SCREEN = 'DoneItemScreen',
 }

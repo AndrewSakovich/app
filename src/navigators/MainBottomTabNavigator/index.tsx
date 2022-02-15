@@ -1,15 +1,15 @@
 import React from 'react';
-import {TodoListTopNavigation} from '../TodoListTopNavigation';
+import {TodoListTopNavigator} from '../TodoListTopNavigator';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faList, faUserCheck} from '@fortawesome/free-solid-svg-icons';
-import {ScreenLogin} from '../../components/ScreenLogin';
+import {LoginScreen} from '../../screens/LoginScreen';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Color} from '../../color';
-import {TodoHeader} from '../../components/AppHeader';
+import {TodoListTopNavigatorHeader} from '../../components/TodoListTopNavigatorHeader';
 import {MainBottomTabParamList} from './type';
 import {nameScreen} from '../nameScreen';
 
-export const MainBottomTabNavigation: React.FC = () => {
+export const MainBottomTabNavigator: React.FC = () => {
   const Tab = createBottomTabNavigator<MainBottomTabParamList>();
 
   return (
@@ -24,12 +24,12 @@ export const MainBottomTabNavigation: React.FC = () => {
         tabBarInactiveBackgroundColor: Color.sapphire,
       }}>
       <Tab.Screen
-        name={nameScreen.TODO_LIST_TOP_NAVIGATION}
-        component={TodoListTopNavigation}
+        name={nameScreen.TODO_LIST_TOP_NAVIGATOR}
+        component={TodoListTopNavigator}
         options={{
           title: 'Todo',
           headerRight: () => {
-            return <TodoHeader />;
+            return <TodoListTopNavigatorHeader />;
           },
           tabBarIcon: () => {
             return (
@@ -40,7 +40,7 @@ export const MainBottomTabNavigation: React.FC = () => {
       />
       <Tab.Screen
         name={nameScreen.SCREEN_LOGIN}
-        component={ScreenLogin}
+        component={LoginScreen}
         options={{
           title: 'Login',
           tabBarIcon: () => {

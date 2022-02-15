@@ -1,7 +1,7 @@
 import {StyleSheet, TextStyle, ViewStyle} from 'react-native';
 import {Color} from '../../color';
 
-type ItemAddStylesType = {
+type AddNewItemScreen = {
   container: ViewStyle;
   button: ViewStyle;
   buttonDis: ViewStyle;
@@ -10,7 +10,7 @@ type ItemAddStylesType = {
   textDis: TextStyle;
 };
 
-export const style = StyleSheet.create<ItemAddStylesType>({
+export const style = StyleSheet.create<AddNewItemScreen>({
   container: {
     padding: 10,
     flexDirection: 'column',
@@ -35,7 +35,6 @@ export const style = StyleSheet.create<ItemAddStylesType>({
     alignItems: 'center',
     justifyContent: 'center',
   },
-
   input: {
     borderWidth: 1,
     borderRadius: 5,

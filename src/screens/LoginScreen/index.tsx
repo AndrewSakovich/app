@@ -3,7 +3,7 @@ import {Text, View, TextInput, TouchableOpacity} from 'react-native';
 import {style} from './style';
 import {Color} from '../../color';
 
-export const ScreenLogin: React.FC = () => {
+export const LoginScreen: React.FC = () => {
   return (
     <View style={style.container}>
       <View>
@@ -11,14 +11,14 @@ export const ScreenLogin: React.FC = () => {
         <TextInput
           style={style.input}
           selectionColor={Color.black}
-          placeholder="enter login"
+          placeholder="Enter login"
           keyboardType="default"
         />
         <Text style={style.text}>{'Password'}</Text>
         <TextInput
           selectionColor={Color.black}
           style={style.input}
-          placeholder="enter password"
+          placeholder="Enter password"
           keyboardType="default"
         />
       </View>
