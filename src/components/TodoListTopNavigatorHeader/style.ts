@@ -1,12 +1,12 @@
 import {StyleSheet, TextStyle, ViewStyle} from 'react-native';
 import {Color} from '../../color';
 
-type AppHeaderStyleType = {
+type TodoListTopNavigatorHeaderStyleType = {
   header: ViewStyle;
   text: TextStyle;
 };
 
-export const style = StyleSheet.create<AppHeaderStyleType>({
+export const style = StyleSheet.create<TodoListTopNavigatorHeaderStyleType>({
   header: {
     flexDirection: 'row',
     alignItems: 'center',

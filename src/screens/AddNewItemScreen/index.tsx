@@ -1,10 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {Text, TextInput, TouchableOpacity, View, ViewStyle} from 'react-native';
 import {style} from './style';
 import {useDispatch} from 'react-redux';
-import {addItemAction} from '../../redux/actions/todoActions/addItemActions';
+import {addItemAction} from '../../redux/actions/todoActions/addItemAction';
 import {Color} from '../../color';
-import {createNewItemHelper} from '../../helpers/createNewItem';
+import {createNewItemHelper} from '../../helpers/createNewItemHelper';
 import {TodoItemType} from '../../models';
 import {AddNewItemScreenNavigationProps} from './type';
 
@@ -12,7 +12,9 @@ export const AddNewItemScreen: React.FC<
   AddNewItemScreenNavigationProps
 > = props => {
   const {navigation} = props;
+
   const dispatch = useDispatch();
+
   const [text, setText] = useState<string>('');
   const buttonStyle: ViewStyle = text ? style.button : style.buttonDis;
 

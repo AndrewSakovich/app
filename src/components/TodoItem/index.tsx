@@ -2,9 +2,9 @@ import {Text, View, Alert, TouchableOpacity} from 'react-native';
 import React, {FC} from 'react';
 import {style} from './style';
 import {useDispatch} from 'react-redux';
-import {deleteItemAction} from '../../redux/actions/todoActions/deleteItemActions';
+import {deleteItemAction} from '../../redux/actions/todoActions/deleteItemAction';
 import {TodoItemPropsType} from '../../screens/ItemListScreen/types';
-import {doneItemActions} from '../../redux/actions/todoActions/doneItemActions';
+import {doneItemAction} from '../../redux/actions/todoActions/doneItemAction';
 
 export const TodoItem: FC<TodoItemPropsType> = props => {
   const {
@@ -16,7 +16,7 @@ export const TodoItem: FC<TodoItemPropsType> = props => {
   const textStyle = done ? style.doneText : style.text;
 
   const onPressDone = () => {
-    dispatch(doneItemActions({id}));
+    dispatch(doneItemAction({id}));
   };
 
   const onPressDelete = () => {

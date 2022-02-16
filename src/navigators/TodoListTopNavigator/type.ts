@@ -6,8 +6,8 @@ import {RootStackNavigationParamList} from '../RootStackNavigator/type';
 import {nameScreen} from '../nameScreen';
 
 export type TodoListTopNavigationParamList = {
-  ItemsScreen: {done: boolean};
-  DoneItemScreen: {done: boolean};
+  [nameScreen.ITEMS_SCREEN]: {done: boolean};
+  [nameScreen.DONE_ITEMS_SCREEN]: {done: boolean};
 };
 
 export type TodoListTopNavigationProp = CompositeNavigationProp<

@@ -39,7 +39,7 @@ export const MainBottomTabNavigator: React.FC = () => {
         }}
       />
       <Tab.Screen
-        name={nameScreen.SCREEN_LOGIN}
+        name={nameScreen.LOGIN_SCREEN}
         component={LoginScreen}
         options={{
           title: 'Login',
