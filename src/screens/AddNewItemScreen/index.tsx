@@ -1,17 +1,9 @@
-import React, {useState} from 'react';
-import {
-  Text,
-  Keyboard,
-  TextInput,
-  TouchableOpacity,
-  View,
-  ViewStyle,
-} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {Text, TextInput, TouchableOpacity, View, ViewStyle} from 'react-native';
 import {style} from './style';
 import {useDispatch} from 'react-redux';
 import {addItemAction} from '../../redux/actions/todoActions/addItemActions';
 import {Color} from '../../color';
-import {v4 as uuid} from 'uuid';
 import {createNewItemHelper} from '../../helpers/createNewItem';
 import {TodoItemType} from '../../models';
 import {AddNewItemScreenNavigationProps} from './type';
