@@ -1,29 +1,63 @@
-const initialState = {
+import {TodoItemType} from '../../models';
+import {addItemPayload} from '../actions/todoActions/addItemActions';
+import {ItemDeletePayload} from '../actions/todoActions/deleteItemActions';
+import {TodoActionTypes} from '../actions/todoActions';
+import {doneItemPayload} from '../actions/todoActions/doneItemActions';
+
+export type TodoReducerState = {
+  todoItems: TodoItemType[];
+};
+
+const initialState: TodoReducerState = {
   todoItems: [],
 };
 
-export const todoReducer = (state = initialState, action) => {
-  const newTodoItems = state.todoItems.filter(item => {
-    return item.id !== action.id;
-  });
-
+export const todoReducer = (
+  state = initialState,
+  action: any,
+): TodoReducerState => {
   switch (action.type) {
-    case 'ADD_ITEM':
+    case TodoActionTypes.ADD_ITEM: {
+      const {newItem}: addItemPayload = action.payload;
+
       return {
         ...state,
         todoItems: [
           ...state.todoItems,
           {
-            id: action.id,
-            text: action.text,
+            ...newItem,
           },
         ],
       };
-    case 'DELETE_ITEM':
+    }
+    case TodoActionTypes.DELETE_ITEM: {
+      const {id}: ItemDeletePayload = action.payload;
+
+      const newTodoItems = [
+        ...state.todoItems.filter((item: TodoItemType) => {
+          return item.id !== id;
+        }),
+      ];
       return {
         ...state,
-        todoItems: [...newTodoItems],
+        todoItems: newTodoItems,
       };
+    }
+    case TodoActionTypes.DONE_ITEM: {
+      const {id}: doneItemPayload = action.payload;
+
+      const newTodoItems = state.todoItems.map(item => {
+        if (item.id === id) {
+          return {...item, done: !item.done};
+        }
+        return item;
+      });
+
+      return {
+        ...state,
+        todoItems: newTodoItems,
+      };
+    }
   }
   return state;
 };

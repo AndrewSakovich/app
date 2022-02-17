@@ -16,7 +16,15 @@ export const style = StyleSheet.create({
     color: '#FFFFFF',
     fontSize: 15,
   },
+  doneText: {
+    color: '#FFFFFF',
+    fontSize: 15,
+    textDecorationLine: 'line-through',
+  },
   delete: {
     color: '#FFFFFF',
+  },
+  touch: {
+    flex: 1,
   },
 });
