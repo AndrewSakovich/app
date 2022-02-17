@@ -1,4 +1,6 @@
+import {nameScreen} from '../nameScreen';
+
 export type MainBottomTabParamList = {
-  TodoListTopNavigator: undefined;
-  LoginScreen: undefined;
+  [nameScreen.TODO_LIST_TOP_NAVIGATOR]: undefined;
+  [nameScreen.LOGIN_SCREEN]: undefined;
 };

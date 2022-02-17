@@ -1,7 +1,7 @@
 import {StyleSheet, TextStyle, ViewStyle} from 'react-native';
 import {Color} from '../../color';
 
-type AddNewItemScreen = {
+type AddNewItemScreenStyleType = {
   container: ViewStyle;
   button: ViewStyle;
   buttonDis: ViewStyle;
@@ -10,7 +10,7 @@ type AddNewItemScreen = {
   textDis: TextStyle;
 };
 
-export const style = StyleSheet.create<AddNewItemScreen>({
+export const style = StyleSheet.create<AddNewItemScreenStyleType>({
   container: {
     padding: 10,
     flexDirection: 'column',

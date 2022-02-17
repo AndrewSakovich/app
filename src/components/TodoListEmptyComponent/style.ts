@@ -1,4 +1,3 @@
-import React from 'react';
 import {StyleSheet, TextStyle, ViewStyle} from 'react-native';
 
 type TodoListEmptyComponentStyleType = {

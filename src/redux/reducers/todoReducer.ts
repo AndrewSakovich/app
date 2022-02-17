@@ -1,8 +1,8 @@
 import {TodoItemType} from '../../models';
-import {addItemPayload} from '../actions/todoActions/addItemActions';
-import {ItemDeletePayload} from '../actions/todoActions/deleteItemActions';
+import {AddItemPayload} from '../actions/todoActions/addItemAction';
+import {ItemDeletePayload} from '../actions/todoActions/deleteItemAction';
 import {TodoActionTypes} from '../actions/todoActions';
-import {doneItemPayload} from '../actions/todoActions/doneItemActions';
+import {DoneItemPayload} from '../actions/todoActions/doneItemAction';
 
 export type TodoReducerState = {
   todoItems: TodoItemType[];
@@ -18,7 +18,7 @@ export const todoReducer = (
 ): TodoReducerState => {
   switch (action.type) {
     case TodoActionTypes.ADD_ITEM: {
-      const {newItem}: addItemPayload = action.payload;
+      const {newItem}: AddItemPayload = action.payload;
 
       return {
         ...state,
@@ -34,7 +34,7 @@ export const todoReducer = (
       const {id}: ItemDeletePayload = action.payload;
 
       const newTodoItems = [
-        ...state.todoItems.filter((item: TodoItemType) => {
+        ...state.todoItems.filter(item => {
           return item.id !== id;
         }),
       ];
@@ -44,7 +44,7 @@ export const todoReducer = (
       };
     }
     case TodoActionTypes.DONE_ITEM: {
-      const {id}: doneItemPayload = action.payload;
+      const {id}: DoneItemPayload = action.payload;
 
       const newTodoItems = state.todoItems.map(item => {
         if (item.id === id) {

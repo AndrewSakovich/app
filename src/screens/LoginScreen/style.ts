@@ -1,7 +1,7 @@
 import {StyleSheet, TextStyle, ViewStyle} from 'react-native';
 import {Color} from '../../color';
 
-type ScreenLoginStylesType = {
+type LoginScreenStylesType = {
   container: ViewStyle;
   input: ViewStyle;
   text: TextStyle;
@@ -10,7 +10,7 @@ type ScreenLoginStylesType = {
   loginText: TextStyle;
   registr: ViewStyle;
 };
-export const style = StyleSheet.create<ScreenLoginStylesType>({
+export const style = StyleSheet.create<LoginScreenStylesType>({
   container: {
     padding: 10,
     flexDirection: 'column',

@@ -6,17 +6,18 @@ import {faPlus} from '@fortawesome/free-solid-svg-icons';
 import {Color} from '../../color';
 import {useNavigation} from '@react-navigation/native';
 import {TodoListTopNavigationProp} from '../../navigators/TodoListTopNavigator/type';
+import {nameScreen} from '../../navigators/nameScreen';
 
 export const TodoListTopNavigatorHeader: FC = () => {
   const navigation = useNavigation<TodoListTopNavigationProp>();
 
-  const getNavigate = () => {
-    navigation.navigate('AddNewItemScreen');
+  const navigateAddNewItemScreen = () => {
+    navigation.navigate(nameScreen.ADD_NEW_ITEM_SCREEN);
   };
 
   return (
     <View style={style.header}>
-      <TouchableOpacity onPress={getNavigate}>
+      <TouchableOpacity onPress={navigateAddNewItemScreen}>
         <FontAwesomeIcon icon={faPlus} size={25} color={Color.white} />
       </TouchableOpacity>
     </View>
